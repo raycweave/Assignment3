@@ -13,7 +13,7 @@ set( CMAKE_C_FLAGS "-Wall -g" )
 # to the variable SRCS. Thus, SRCS is a list a all C source and header files in the 
 # current directory.
 
-file( GLOB SRCS *.c *.h )
+file( GLOB SRCS *.cpp *.h )
 
 # Define the target application executable (named spacer) and the list of C source
 # and header files needed for the executable.
