@@ -8,12 +8,15 @@
 */
 
 /**************************************************************************************************/
-/*
+
 #ifndef NMEAParser_H
 #define NMEAParser_H
 
+#include "GPSIMUState.h"
+#include <iostream>
 #include <vector>
 #include <string>
+using namespace std;
 
 class NMEAParser {
 public:
@@ -29,4 +32,4 @@ private:
 };
 
 #endif
-*/
+
