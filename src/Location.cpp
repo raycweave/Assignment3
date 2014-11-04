@@ -1,9 +1,13 @@
-/***
- Author: Your Name
- NetID: netida
- Assignment #: 3
- File: Location.cpp
- */
+/**************************************************************************************************/
+
+/*
+* File: Location.cpp
+* Author: Ray Weaver
+* NetID: rayweaver
+* Date: November 4, 2014
+*/
+
+/**************************************************************************************************/
 
 /***
 You will need to update all file comments and ensure all other
@@ -27,9 +31,7 @@ already in it, rather than later assigning those values to the variables
 of the functions. It makes all things run a little faster, but it only
 works with constructors. We'll learn more about this in later chapters.
 */
-Location::Location( std::string name,
-				   double latitude, double longitude )
-: name(name), latitude(latitude), longitude(longitude)
+Location::Location( std::string name, double latitude, double longitude ) : name(name), latitude(latitude), longitude(longitude)
 {
 	
 }

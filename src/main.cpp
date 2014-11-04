@@ -19,17 +19,15 @@
 
 
 #define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
-#include <fstream>
 #include <cstdlib>
 #include <cstdio>
-#include <sstream>
-#include <string>
 
-#include "GPSIMUState.h"
 #include "NMEAParser.h"
 #include "VehicleJourney.h"
 #include "Visit.h"
+
 using namespace std;
 
 /**************************************************************************************************/
@@ -54,11 +52,26 @@ int main(int argc, char *argv [])
 		cerr << "Usage: " << argv[0] << " logFile outputFile" << endl;
 		return -1;
 	}
-
-	//VehicleJourney roadTrip;
 	
+	//VehicleJourney roadTrip;
 	//roadTrip.setStates(NMEAParser::parseLogFile(argv[1]));
 
+	/*
+	if (roadTrip.getStates().size() > 0)
+	{
+		roadTrip.analyzeJourney();
+		if (roadTrip.writeOutputFile(argv[2]) == false)
+		{
+			cerr << "Cannot open file " << argv[2] << endl;
+			return -1;
+		}
+	}
+
+	else {
+		cerr << "The file " << argv[1] << " cannot open or is empty" << endl;
+		return -1;
+	}
+	*/
 	NMEAParser::parseLogFile(argv[1]);
 
 	return 0;

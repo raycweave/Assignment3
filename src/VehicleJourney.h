@@ -12,6 +12,8 @@
 #ifndef VehicleJourney_H
 #define VehicleJourney_H
 
+#include <vector>
+#include "GPSIMUState.h"
 #include "Visit.h"
 #include "Location.h"
 #include <iostream>
@@ -31,7 +33,7 @@ public:
 	~VehicleJourney(void);
 
 	/* Implement other methods as you see fit */
-
+	void setDefaultLocations();
 	
 	/* Analyse journey calculates the visits and sorts them */
 	void analyzeJourney( );
@@ -62,6 +64,7 @@ private:
 	// if you create this list when you construct your vehicle journey, then
 	// it may be easier to check whether you are in a location or not
 	vector<Location*> locations;
+
 };
 
 #endif

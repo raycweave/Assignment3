@@ -8,3 +8,25 @@
 */
 
 /**************************************************************************************************/
+
+#include "VehicleJourney.h"
+
+void VehicleJourney::analyzeJourney() {
+
+
+}
+
+bool VehicleJourney::writeOutputFile(string filename) {
+
+
+}
+
+void VehicleJourney::determineVisits() {
+
+
+}
+
+void VehicleJourney::sortVisits() {
+
+
+}

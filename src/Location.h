@@ -1,22 +1,18 @@
-/***
- Name: Your name
- Netid: your netid
- Course: ECE275
- Assignment #: 3
- File: Location.h
- */
+/**************************************************************************************************/
+
+/*
+* File: Location.h
+* Author: Ray Weaver
+* NetID: rayweaver
+* Date: November 4, 2014
+*/
+
+/**************************************************************************************************/
 
 
 #ifndef LOCATION_H
 #define LOCATION_H
-
-/***
-You will need to update all file comments and ensure all other
-method and code comments are complete---these are not sufficient, 
-but are provided to remind you that it is important to carry out
-detailed comments to help you structure your code, and for others
-to be able to read your code
-*/
+using namespace std;
 
 #include <string>
 
@@ -54,6 +50,8 @@ to be able to read your code
 #define ELLIOT_LON -110.959206
 #define UNKNOWN "Unknown"
 
+
+
 // the amount of tolerance for whether we are at a location or not
 #define LOCATION_TOLERANCE 0.002
 
@@ -64,7 +62,7 @@ public:
 	
 	// this overloaded constructor permits us to rapidly set the values
 	// of this location without having to call the getter/setter methods
-	Location( std::string name, double latitude, double longitude );
+	Location(string name, double latitude, double longitude );
 	// the destructor doesn't have anything to do, since all our types
 	// will delete themselves
 	~Location( ) { }
@@ -76,9 +74,9 @@ public:
 	/* Mutators for variables are below */
 
 	// you will need to update these comments
-	void setName( std::string name ) { this->name = name; }
+	void setName(string name ) { this->name = name; }
 	// you will need to update these comments
-	std::string getName( ) const { return name; }
+	string getName( ) const { return name; }
 
 	// you will need to update these comments
 	void setLatitude( double latitude ) { this->latitude = latitude; }
@@ -90,9 +88,10 @@ public:
 	// you will need to update these comments
 	double getLongitude( ) const { return longitude; }
 	
+
 private:
 	// you will need to update these comments
-	std::string name;
+	string name;
 	double latitude;
 	double longitude;
 };
