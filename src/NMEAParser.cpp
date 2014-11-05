@@ -26,13 +26,17 @@ vector<GPSIMUState*> NMEAParser::parseLogFile(string filename) {
 	inputFile.open(filename.c_str());
 	GPSIMUState *temp = NULL;
 
-	if (inputFile.is_open()) {
-		while (!inputFile.eof()) {
+	if (inputFile.is_open()) 
+	{
+		while (!inputFile.eof()) 
+		{
 			getline(inputFile, line);
 
-			if (line.compare("#INSPVAA") == 1) {
+			if (line.compare("#INSPVAA") == 1)   //line.substr(0,8) == "#INSPVAA")
+			{
 				temp = NMEAParser::parseNMEASentence(line);
-				if (temp) {
+				if (temp) 
+				{
 					result.push_back(temp);
 				}
 			}
@@ -55,4 +59,3 @@ GPSIMUState* NMEAParser::parseNMEASentence(string sentence)
 }
 
 		
-//#INSPVAA,COM1,0,54.5,FINESTEERING,1748,502500.800,00000000,5615,4674;1748,502500.794775700,0.000000000,0.000000000,0.000000000,0.000000000,0.000000000,0.000000000,0.000000000,0.000000000,0.000000000,INS_ALIGNING*3fe523b6

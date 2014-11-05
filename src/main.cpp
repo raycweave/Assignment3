@@ -52,9 +52,22 @@ int main(int argc, char *argv [])
 		cerr << "Usage: " << argv[0] << " logFile outputFile" << endl;
 		return -1;
 	}
+
+	/*
+	Visit v("Eegee's", 100, 101);
+	v.addState("Init");
+	std::cout << v.getVisitString();
+	*/
+
+
 	
-	//VehicleJourney roadTrip;
-	//roadTrip.setStates(NMEAParser::parseLogFile(argv[1]));
+	VehicleJourney roadTrip;
+	roadTrip.setStates(NMEAParser::parseLogFile(argv[1]));
+	roadTrip.analyzeJourney();
+	
+
+
+
 
 	/*
 	if (roadTrip.getStates().size() > 0)
@@ -72,7 +85,7 @@ int main(int argc, char *argv [])
 		return -1;
 	}
 	*/
-	NMEAParser::parseLogFile(argv[1]);
+
 
 	return 0;
 }

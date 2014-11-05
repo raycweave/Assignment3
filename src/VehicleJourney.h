@@ -12,16 +12,18 @@
 #ifndef VehicleJourney_H
 #define VehicleJourney_H
 
-#include <vector>
 #include "GPSIMUState.h"
 #include "Visit.h"
 #include "Location.h"
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <cstdio>
 #include <sstream>
 #include <string>
+#include <vector>
+
 using namespace std;
 
 class VehicleJourney {
@@ -33,7 +35,7 @@ public:
 	~VehicleJourney(void);
 
 	/* Implement other methods as you see fit */
-	void setDefaultLocations();
+
 	
 	/* Analyse journey calculates the visits and sorts them */
 	void analyzeJourney( );

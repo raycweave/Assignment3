@@ -13,6 +13,8 @@
 
 #ifndef Visit_H
 #define Visit_H
+#include <vector>
+#include <string>
 
 using namespace std;
 

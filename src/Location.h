@@ -69,7 +69,7 @@ public:
 	
 	// returns TRUE if both latitude and longitude are within 
 	// LOCATION_TOLERANCE of this Location objects's latitude and longitude
-	bool inLocation( double latitude, double longitude ) const;
+	bool inLocation( double latitude, double longitude ) const; //HERE 
 
 	/* Mutators for variables are below */
 

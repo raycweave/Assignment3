@@ -19,6 +19,9 @@ to be able to read your code
 #include <stdio.h>
 #include <math.h>
 #include "Location.h"
+#include "VehicleJourney.h"
+#include "GPSIMUState.h"
+#include "Visit.h"
 
 // implementation of Location nondefault constructor
 /***
@@ -31,7 +34,8 @@ already in it, rather than later assigning those values to the variables
 of the functions. It makes all things run a little faster, but it only
 works with constructors. We'll learn more about this in later chapters.
 */
-Location::Location( std::string name, double latitude, double longitude ) : name(name), latitude(latitude), longitude(longitude)
+Location::Location( std::string name, double latitude, double longitude ) 
+: name(name), latitude(latitude), longitude(longitude)
 {
 	
 }
@@ -45,5 +49,11 @@ bool Location::inLocation( double latitude, double longitude ) const
 	Fill in the implementation here, to tell whether both the latitude 
 	and longitude are within LOCATION_TOLERANCE of this location
 	*/
+
+	if ((fabs(this->latitude - latitude) < LOCATION_TOLERANCE) && (fabs(this->longitude - longitude) < LOCATION_TOLERANCE)) {
+		result = true;
+	}
+	
+
 	return result;
 }
