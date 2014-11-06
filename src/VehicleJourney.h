@@ -51,6 +51,7 @@ public:
 	/* Mutators for variables are below */
 	void setStates(vector<GPSIMUState*> states ) { this->states = states; }
 	vector<GPSIMUState*> getStates( ) const { return this->states; }
+	
 
 private:
 	/* looks through the state vector and determines the visits, including

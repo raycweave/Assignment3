@@ -42,6 +42,7 @@ Source: gpsinformation.org/dale/nmea.htm
 
 int main(int argc, char *argv [])
 {
+	VehicleJourney roadTrip;
 
 	/*
 	* check for the correct number of command line arguments.  If incorrect
@@ -59,17 +60,11 @@ int main(int argc, char *argv [])
 	std::cout << v.getVisitString();
 	*/
 
-
+	//VehicleJourney roadTrip;
+	//roadTrip.setStates(NMEAParser::parseLogFile(argv[1]));
+	//roadTrip.analyzeJourney();
 	
-	VehicleJourney roadTrip;
-	roadTrip.setStates(NMEAParser::parseLogFile(argv[1]));
-	roadTrip.analyzeJourney();
 	
-
-
-
-
-	/*
 	if (roadTrip.getStates().size() > 0)
 	{
 		roadTrip.analyzeJourney();
@@ -84,7 +79,7 @@ int main(int argc, char *argv [])
 		cerr << "The file " << argv[1] << " cannot open or is empty" << endl;
 		return -1;
 	}
-	*/
+	
 
 
 	return 0;

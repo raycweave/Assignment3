@@ -8,11 +8,13 @@
 */
 
 /**************************************************************************************************/
+#include <iostream>
 #include "Location.h"
 #include "VehicleJourney.h"
 #include "GPSIMUState.h"
 #include "Visit.h"
-
+#include "NMEAParser.h"
+using namespace std;
 /*
 VehicleJourney::VehicleJourney() is the default constructor which sets all defined locations in Location.h
 to positions in the VehicleJourney objects locations vector. 
@@ -73,6 +75,21 @@ void VehicleJourney::analyzeJourney() {
 
 bool VehicleJourney::writeOutputFile(string filename) {
 
+	int i;
+	ofstream outFS; // Output file stream
+
+	outFS.open(filename);
+
+	if (!outFS.is_open()) {
+		cout << "Could not open file " << filename << endl;
+		return 1;
+	}
+	for (i = 0; i < visits.size(); i++) {
+		outFS << visits.at(i)->getLocation() << endl;
+		outFS << visits.at(i)->getStartTime() << " to " << visits.at(i)->getEndTime() << endl;
+		//outFS << "States: "; << visits.at(i)->getStates() << endl;
+	}
+
 
 	return true;
 }
@@ -127,19 +144,20 @@ void VehicleJourney::determineVisits() {
 			tempEndTime = tempStartTime;
 
 			visitTemp->addState(states.at(i)->getState());
+			count = 0;
 
-			for (j = i+1; j < states.size(); j++)
+			for (j = i + 1; j < states.size(); j++)
 			{
 				if (locationName == states.at(j)->getLocation())
 				{
-					if (states.at(j)->getState() != visitTemp->getStates().back())
+					if (states.at(j)->getState() != visitTemp->getStates().back()) //visitTemp->getStates().back()
 					{
 						visitTemp->addState(states.at(j)->getState());			
 					}
 					tempEndTime = states.at(j)->getSeconds();
 					count++;
 				}
-				else 
+				else
 				{
 					break;
 				}
@@ -165,6 +183,3 @@ void VehicleJourney::sortVisits() {
 
 }
 
-/*tempEndTime = states.at(j)->getSeconds();
-visitTemp = new Visit(states.at(i)->getLocation(), tempStartTime, tempEndTime);
-visits.push_back(visitTemp);*/
